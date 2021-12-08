@@ -1,0 +1,108 @@
+{
+  "films": [
+    {
+      "id": 1,
+      "title": "STAR WARS : EPISODE I - LA MENACE FANTÔME",
+      "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+    },
+    {
+      "id": 2,
+      "title": "STAR WARS : EPISODE II - L'ATTAQUE DES CLONES",
+      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla"
+    },
+    {
+      "id": 3,
+      "title": "STAR WARS : EPISODE III - LA REVANCHE DES SITH",
+      "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut"
+    },
+    {
+      "id": 4,
+      "title": "STAR WARS : EPISODE IV - UN NOUVEL ESPOIR",
+      "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit"
+    },
+    {
+      "id": 5,
+      "title": "STAR WARS : EPISODE V - L'EMPIRE CONTRE-ATTAQUE",
+      "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque"
+    },
+    {
+      "id": 6,
+      "title": "STAR WARS : EPISODE VI - LE RETOUR DU JEDI",
+      "body": "ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae"
+    }
+  ],
+  "reservations": [],
+  "salles": [
+    {
+      "id": 1,
+      "name": "Salle 1",
+      "places": "120"
+    },
+    {
+      "id": 2,
+      "name": "Salle 2",
+      "places": "160"
+    },
+    {
+      "id": 3,
+      "name": "Salle 3",
+      "places": "80"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874",
+        "geo": {
+          "lat": "-37.3159",
+          "lng": "81.1496"
+        }
+      },
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "email": "Lucio_Hettinger@annie.ca",
+      "address": {
+        "street": "Skiles Walks",
+        "suite": "Suite 351",
+        "city": "Roscoeview",
+        "zipcode": "33263",
+        "geo": {
+          "lat": "-31.8129",
+          "lng": "62.5342"
+        }
+      },
+      "phone": "(254)954-1289",
+      "website": "demarco.info",
+      "company": {
+        "name": "Keebler LLC",
+        "catchPhrase": "User-centric fault-tolerant solution",
+        "bs": "revolutionize end-to-end systems"
+      }
+    },
+    {
+      "name": "Simon Maniez",
+      "username": "slocx",
+      "email": "symon.maniez@gmail.com",
+      "phone": "0616151228",
+      "website": "sderth.com",
+      "id": 6
+    }
+  ]
+}

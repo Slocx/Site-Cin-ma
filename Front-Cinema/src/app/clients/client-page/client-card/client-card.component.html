@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-header">
+        {{ client.name }}
+        <button class="edit-button" (click)="editClient()">Modifier    </button>
+        <button class="delete-button" (click)="deleteClient()">&times;</button>
+    </div>
+    <div class="card-content">
+        <ul>
+            <li>tel: <a href='{{ "tel:+" + client.phone }}'>{{ client.phone }}</a></li>
+            <li>email: <a href='{{"mailto:" + client.email}}'>{{ client.email }}</a></li>
+            <li>website: <a href='{{"https://"+ client.website}}'>{{ client.website }}</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="film">
+    <div>{{ film.title }}</div>
+    <div>
+        {{ film.body | slice:0:100 }}[...]
+    </div>
+    <button (click)="viewFilm()">Lire les détails du film</button>
+</div>
