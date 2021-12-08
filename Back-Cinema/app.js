@@ -13,7 +13,8 @@ dotenv.config();
 require('./config/db.config');
 
 // import des routes
-const userRoute = require('./routes/users.route');
+const userRoute = require('./routes/user.route');
+const filmRoute = require('./routes/film.route');
 
 // création de l'app
 const app = express();
@@ -31,6 +32,7 @@ app.use(poulet);            // Middleware perso
 
 // utilisation des routes
 app.use(userRoute);
+app.use(filmRoute);
 
 // écoute sur le port donné en param
 app.listen(PORT, () => {
