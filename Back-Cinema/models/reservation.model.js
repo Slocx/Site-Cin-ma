@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // import de l'id de la Salle
-const salleId = require('./salle.model')
+const salleId = require('salle.model');
 
 // Définition des attributs d'un utilisateur
 const reservationSchema = {

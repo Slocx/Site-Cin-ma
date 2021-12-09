@@ -2,11 +2,10 @@
 const mongoose = require('mongoose');
 
 // import de film.model
-const filmId = require('./film.model')
+const filmId = require('film.model')
 
 // Définition des attributs d'un utilisateur
 const salleSchema = {
-    
     id: { type: Number, required: true},
     numeroSalle: { type: Number, required: true},
     filmId: { type: Number, required: true},

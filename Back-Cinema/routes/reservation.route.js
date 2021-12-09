@@ -1,30 +1,30 @@
 // import du framework
 const express = require('express');
 
-const SalleModel = require('../models/salle.model');
+const ReservationModel = require('../models/reservation.model');
 
 // récupération du Router Express
 const Router = express.Router();
 
-// logique pour la route 'salles'
-Router.route('/salles')
-    .get(async (_, res) => {
-        // Récupération de TOUS les films dans la base
-        // await = attends la reponse
-        let salles = await SalleModel.find();
 
-        if (salles.length === 0) {
+// logique pour la route 'reservations'
+Router.route('/reservations')
+    .get(async (_, res) => {
+        // Récupération de TOUTES les reservations dans la base
+        // await = attends la reponse
+        let reservations = await ReservationModel.find();
+        if (reservations.length === 0) {
             res.status(404);
         } else {
             res.status(200);
         }
 
-        res.json(salles);
+        res.json(reservations);
     })
     .post(async (req, res) => {
-        let newSalle = req.body;
+        let newReservation = req.body;
         try {
-            let resp = await SalleModel.create(newSalle);
+            let resp = await ReservationModel.create(newReservation);
             res.status(201).json(resp);
         } catch (err) {
             console.error(err);
@@ -32,21 +32,21 @@ Router.route('/salles')
         }
     });
 
-// logique pour la route 'salles/id'
-Router.route('/salles/:id')
+// logique pour la route 'reservations/id'
+Router.route('/reservations/:id')
     .get(async (req, res) => {
         try {
-            // recherche d'une salle par id
-            let salle = await SalleModel.findById(req.params.id);
-            res.status(200).json(salle);
+            // recherche d'une reservation par id
+            let reservation = await ReservationModel.findById(req.params.id);
+            res.status(200).json(reservation);
         } catch (err) {
             sendErrMessage(res, err);
         }
     })
     .put(async (req, res) => {
-        let newSalle = req.body;
+        let newReservation = req.body;
         try {
-            let resp = await SalleModel.findByIdAndUpdate(req.params.id, newSalle);
+            let resp = await ReservationModel.findByIdAndUpdate(req.params.id, newReservation);
             res.json(resp);
         } catch (err) {
             sendErrMessage(res, err);
@@ -54,7 +54,7 @@ Router.route('/salles/:id')
     })
     .delete(async (req, res) => {
         try {
-            let resp = await SalleModel.findByIdAndDelete(req.params.id);
+            let resp = await ReservationModel.findByIdAndDelete(req.params.id);
             req.json(resp);
         } catch (err) {
             sendErrMessage(res, err);

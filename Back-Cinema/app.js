@@ -13,8 +13,10 @@ dotenv.config();
 require('./config/db.config');
 
 // import des routes
-const userRoute = require('./routes/user.route');
+const clientRoute = require('./routes/client.route');
 const filmRoute = require('./routes/film.route');
+const salleRoute = require('./routes/salle.route');
+const reservationRoute = require('./routes/reservation.route');
 
 // création de l'app
 const app = express();
@@ -31,8 +33,10 @@ app.use(helmet());          // Middleware pour sécuriser les headers de l'API
 app.use(poulet);            // Middleware perso
 
 // utilisation des routes
-app.use(userRoute);
+app.use(clientRoute);
 app.use(filmRoute);
+app.use(salleRoute);
+app.use(reservationRoute);
 
 // écoute sur le port donné en param
 app.listen(PORT, () => {

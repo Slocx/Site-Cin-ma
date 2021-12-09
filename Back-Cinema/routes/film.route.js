@@ -13,8 +13,8 @@ Router.route('/films/search')
     .get(async (req, res) => {
         console.log(req.query);
         let searchParams = req.query;
-        let users = await FilmModel.find({ ...searchParams });
-        res.json(users);
+        let films = await FilmModel.find({ ...searchParams });
+        res.json(films);
     });
 
 // logique pour la route 'films'
@@ -22,15 +22,15 @@ Router.route('/films')
     .get(async (_, res) => {
         // Récupération de TOUS les films dans la base
         // await = attends la reponse
-        let users = await FilmModel.find();
+        let films = await FilmModel.find();
 
-        if (users.length === 0) {
+        if (films.length === 0) {
             res.status(404);
         } else {
             res.status(200);
         }
 
-        res.json(users);
+        res.json(films);
     })
     .post(async (req, res) => {
         let newFilm = req.body;
@@ -48,8 +48,8 @@ Router.route('/films/:id')
     .get(async (req, res) => {
         try {
             // recherche d'un film par id
-            let user = await FilmModel.findById(req.params.id);
-            res.status(200).json(user);
+            let film = await FilmModel.findById(req.params.id);
+            res.status(200).json(film);
         } catch (err) {
             sendErrMessage(res, err);
         }
