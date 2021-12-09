@@ -22,7 +22,7 @@ Router.route('/films')
     .get(async (_, res) => {
         // Récupération de TOUS les films dans la base
         // await = attends la reponse
-        let films = await FilmModel.find();
+        let films = await FilmModel.find().populate('salleId');
 
         if (films.length === 0) {
             res.status(404);
@@ -61,6 +61,24 @@ Router.route('/films/:id')
             res.json(resp);
         } catch (err) {
             sendErrMessage(res, err);
+        }
+    })
+    .patch(async (req, res) => {
+        // Recherche du film à mettre à jour
+        let film = await FilmModel.findById(req.params.id);
+        if (film) {
+            // Object.keys retourne les clés d'un objets
+            Object.keys(req.body).forEach((key) => {
+                // mise à jour partielle
+                film[key] = req.body[key];
+            });
+            // je met à jour le film
+            await FilmModel.findByIdAndUpdate(req.params.id, film);
+            res.status(200);
+            res.json(film);
+        } else {
+            res.status(404);
+            res.end();
         }
     })
     .delete(async (req, res) => {

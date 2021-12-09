@@ -6,6 +6,16 @@ const SalleModel = require('../models/salle.model');
 // récupération du Router Express
 const Router = express.Router();
 
+
+// Pour rechercher un salle avec query
+// GET sur http://localhost:3000/salles/search?
+Router.route('/salles/search')
+    .get(async (req, res) => {
+        console.log(req.query);
+        let searchParams = req.query;
+        let salles = await SalleModel.find({ ...searchParams });
+        res.json(salles);
+    });
 // logique pour la route 'salles'
 Router.route('/salles')
     .get(async (_, res) => {
@@ -50,6 +60,24 @@ Router.route('/salles/:id')
             res.json(resp);
         } catch (err) {
             sendErrMessage(res, err);
+        }
+    })
+    .patch(async (req, res) => {
+        // Recherche du salle à mettre à jour
+        let salle = await SalleModel.findById(req.params.id);
+        if (salle) {
+            // Object.keys retourne les clés d'un objets
+            Object.keys(req.body).forEach((key) => {
+                // mise à jour partielle
+                salle[key] = req.body[key];
+            });
+            // je met à jour la salle
+            await SalleModel.findByIdAndUpdate(req.params.id, salle);
+            res.status(200);
+            res.json(salle);
+        } else {
+            res.status(404);
+            res.end();
         }
     })
     .delete(async (req, res) => {

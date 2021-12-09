@@ -4,6 +4,7 @@ import { ClientCreateComponent } from './clients/client-create/client-create.com
 import { ClientPageComponent } from './clients/client-page/client-page.component';
 import { FilmDetailComponent } from './film/film-detail/film-detail.component';
 import { FilmsPageComponent } from './film/films-page/films-page.component';
+import { ReservationPageComponent } from './reservations-page/reservations-page.component';
 import { SallePageComponent } from './salles/salle-page/salle-page.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: "salles", children: [
       { path: "", component: SallePageComponent, pathMatch: "full" }
+    ]
+  },
+  {
+    path: "reservations", children: [
+      { path: "", component: ReservationPageComponent, pathMatch: "full" }
     ]
   },
     // Wildcard pour afficher un composant en cas de non existance de la page

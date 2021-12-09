@@ -2,12 +2,13 @@
 const mongoose = require('mongoose');
 
 // Définition des attributs d'un utilisateur
-const filmSchema = {
-    id: { type: Number, required: true},
-    name: { type: String, required: true },
-    title: { type: String, required: true },
-    body: { type: String }
-}
+const filmSchema = ({
+   // _id: { type: mongoose.SchemaTypes.ObjectId },
+   title: { type: String, required: true },
+   duration: { type: String, required: true },
+   description: { type: String },
+   release_date: { type: Date },
+}, { versionKey: false })
 
 // Création du modèle (Objet qui contient les fonctions pour communiquer avec Mongo)
 const FilmModel = mongoose.model('films', filmSchema)

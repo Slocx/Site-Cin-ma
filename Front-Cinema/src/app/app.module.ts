@@ -15,6 +15,8 @@ import { ClientCreateComponent } from './clients/client-create/client-create.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SallePageComponent } from './salles/salle-page/salle-page.component';
 import { SalleComponent } from './salles/salle-page/salle/salle.component';
+import { ReservationPageComponent } from './reservations-page/reservations-page.component';
+import { ReservationComponent } from './reservations-page/reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { SalleComponent } from './salles/salle-page/salle/salle.component';
     ClientCreateComponent,
     SallePageComponent,
     SalleComponent,
+    ReservationPageComponent,
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
